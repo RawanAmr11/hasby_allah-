@@ -102,6 +102,7 @@ class Register extends StatelessWidget {
                 child: MaterialButton(
                   onPressed: () {},
                   color: Colors.blue,
+                  textColor: Colors.white,
                   child: const Text("Register"),
                 ),
               ),
