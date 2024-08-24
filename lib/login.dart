@@ -24,7 +24,7 @@ class Login extends StatelessWidget {
           //spaces
           child: SingleChildScrollView(
             //scrollview
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +41,7 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
+                  SizedBox(
                     width: 350,
                     child: TextFormField(
                       controller: email,
@@ -56,7 +56,7 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
+                  SizedBox(
                     width: 350,
                     child: TextFormField(
                       controller: password,
