@@ -6,7 +6,7 @@ class Login extends StatelessWidget {
   TextEditingController password = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {n
+  Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           leading: const Icon(
