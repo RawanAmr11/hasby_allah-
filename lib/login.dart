@@ -9,9 +9,16 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: const Icon(Icons.list),
-          title: const Text("login"),
+          leading: const Icon(
+            Icons.label_important_outlined,
+            color: Colors.white,
+          ),
+          title: const Text(
+            "Login",
+            style: TextStyle(color: Colors.white),
+          ),
           centerTitle: true,
+          backgroundColor: Colors.blue,
         ),
         body: SafeArea(
           //spaces
@@ -68,7 +75,10 @@ class Login extends StatelessWidget {
                   MaterialButton(
                     onPressed: () {},
                     color: Colors.blue,
-                    child: const Text('login'),
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

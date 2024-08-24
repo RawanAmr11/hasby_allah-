@@ -11,11 +11,16 @@ class Register extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.list),
+        leading: const Icon(
+          Icons.label_important_outlined,
+          color: Colors.white,
+        ),
         centerTitle: true,
         title: const Text(
           "Register",
+          style: TextStyle(color: Colors.white),
         ),
+        backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -37,6 +42,7 @@ class Register extends StatelessWidget {
                 height: 50,
                 child: TextFormField(
                   controller: name,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
                     labelText: "Name",
                     border: OutlineInputBorder(
@@ -53,6 +59,7 @@ class Register extends StatelessWidget {
                 height: 50,
                 child: TextFormField(
                   controller: age,
+                  keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                     labelText: "Age",
                     border: OutlineInputBorder(
