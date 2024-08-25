@@ -117,10 +117,9 @@ class Register extends StatelessWidget {
                         email.text,
                         password.text,
                         name.text,
-                        age.text as int,
                       );
                     } catch (e) {
-                      print('Login failed: $e');
+                      print('Register failed: $e');
                     }
                   },
                   color: Colors.blue,
