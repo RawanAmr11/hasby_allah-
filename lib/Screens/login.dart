@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:test3/register.dart';
+import 'package:test3/Screens/register.dart';
 
-import 'Networks/remote/http.dart';
+import '../Networks/remote/http.dart';
 
 class Login extends StatelessWidget {
   TextEditingController email = TextEditingController();

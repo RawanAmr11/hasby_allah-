@@ -5,10 +5,12 @@ import 'package:http/http.dart' as http;
 Future<void> login(String email, String password) async {
   final url = Uri.parse('https://yourapi.com/login');
 
-  final body = json.encode({
-    'email': email,
-    'password': password,
-  });
+  final body = json.encode(
+    {
+      'email': email,
+      'password': password,
+    },
+  );
 
   try {
     final response = await http.post(

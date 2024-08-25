@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:test3/login.dart';
+import 'package:test3/Screens/login.dart';
+
+import '../Networks/remote/http.dart';
 
 class Register extends StatelessWidget {
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController age = TextEditingController();
   TextEditingController password = TextEditingController();
+
+  Register({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class Register extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +41,7 @@ class Register extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: TextFormField(
@@ -54,7 +58,7 @@ class Register extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: TextFormField(
@@ -71,7 +75,7 @@ class Register extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: TextFormField(
@@ -87,7 +91,7 @@ class Register extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: TextFormField(
@@ -104,16 +108,27 @@ class Register extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 width: 200,
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    try {
+                      register(
+                        email.text,
+                        password.text,
+                        name.text,
+                        age.text as int,
+                      );
+                    } catch (e) {
+                      print('Login failed: $e');
+                    }
+                  },
                   color: Colors.blue,
                   textColor: Colors.white,
                   child: const Text("Register"),
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 200,
                 child: TextButton(
                   onPressed: () {
