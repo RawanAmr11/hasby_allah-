@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:test3/register.dart';
 
+import 'Networks/remote/http.dart';
+
 class Login extends StatelessWidget {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
+
+  Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +77,13 @@ class Login extends StatelessWidget {
                     height: 20,
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      try {
+                        await login(email.text, password.text);
+                      } catch (e) {
+                        print('Login failed: $e');
+                      }
+                    },
                     color: Colors.blue,
                     child: const Text(
                       'Login',
