@@ -1,13 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:test3/Screens/login.dart';
 
 import '../Networks/remote/http.dart';
 
 class Register extends StatelessWidget {
-  TextEditingController name = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController age = TextEditingController();
-  TextEditingController password = TextEditingController();
+  final TextEditingController name = TextEditingController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController age = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  final AuthenticationService? register = AuthenticationService.getService();
 
   Register({super.key});
 
@@ -113,13 +115,15 @@ class Register extends StatelessWidget {
                 child: MaterialButton(
                   onPressed: () {
                     try {
-                      register(
+                      register?.register(
                         email.text,
                         password.text,
                         name.text,
                       );
                     } catch (e) {
-                      print('Register failed: $e');
+                      if (kDebugMode) {
+                        print('Register failed: $e');
+                      }
                     }
                   },
                   color: Colors.blue,

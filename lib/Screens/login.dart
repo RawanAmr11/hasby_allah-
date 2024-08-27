@@ -1,11 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:test3/Screens/register.dart';
 
 import '../Networks/remote/http.dart';
 
 class Login extends StatelessWidget {
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  final AuthenticationService? login = AuthenticationService.getService();
 
   Login({super.key});
 
@@ -79,9 +81,11 @@ class Login extends StatelessWidget {
                   MaterialButton(
                     onPressed: () async {
                       try {
-                        await login(email.text, password.text);
+                        await login?.login(email.text, password.text);
                       } catch (e) {
-                        print('Login failed: $e');
+                        if (kDebugMode) {
+                          print('Login failed: $e');
+                        }
                       }
                     },
                     color: Colors.blue,
